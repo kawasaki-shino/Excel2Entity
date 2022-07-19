@@ -43,9 +43,9 @@ namespace Excel2Entity
 
 					var table = new Sheets
 					{
-						LogicalName = sheet.Cell("C6").Value.ToString(),
-						PhysicsName = sheet.Cell("C7").Value.ToString(),
-						ClassName = GenerateClassName(sheet.Cell("C7").Value.ToString())
+						LogicalName = CustomTrim(sheet.Cell("C6").Value.ToString()),
+						PhysicsName = CustomTrim(sheet.Cell("C7").Value.ToString()),
+						ClassName = GenerateClassName(CustomTrim(sheet.Cell("C7").Value.ToString()))
 					};
 
 					Files.Add(table);
@@ -88,10 +88,10 @@ namespace Excel2Entity
 				// カラムを読み込む
 				for (var i = 14; i < 1000; i++)
 				{
-					var b = sheet.Cell($"B{i}").Value.ToString();
-					var c = sheet.Cell($"C{i}").Value.ToString();
-					var d = sheet.Cell($"D{i}").Value.ToString();
-					var g = sheet.Cell($"G{i}").Value.ToString();
+					var b = CustomTrim(sheet.Cell($"B{i}").Value.ToString());
+					var c = CustomTrim(sheet.Cell($"C{i}").Value.ToString());
+					var d = CustomTrim(sheet.Cell($"D{i}").Value.ToString());
+					var g = CustomTrim(sheet.Cell($"G{i}").Value.ToString());
 
 					// 論理名が空ならループを抜ける
 					if (string.IsNullOrWhiteSpace(b)) break;
@@ -100,9 +100,7 @@ namespace Excel2Entity
 					{
 						LogicalName = b,
 						PhysicsName = c,
-						Type = string.IsNullOrWhiteSpace(d)
-							? null
-							: new string(d.Where(t => !char.IsControl(t)).ToArray()),
+						Type = d,
 						Default = g
 					};
 					list.Add(columns);
@@ -145,6 +143,19 @@ namespace Excel2Entity
 
 			// 任意名称部分の先頭文字を大文字にして返却
 			return Columns.ToUpperCamelCase(words[1]);
+		}
+
+		/// <summary>
+		/// Excel から取得した文字列中の余計な文字を抜く
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		private string CustomTrim(string value)
+		{
+			// 空白を抜く
+			value = value.Trim().Trim('\u200B');
+			// 制御文字を抜く
+			return new string(value.Where(c => !char.IsControl(c)).ToArray());
 		}
 	}
 }

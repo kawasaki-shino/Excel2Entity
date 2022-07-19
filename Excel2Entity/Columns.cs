@@ -21,12 +21,19 @@ namespace Excel2Entity
 		{
 			get
 			{
-				// 単純な文字列比較だと引っかからないので Contains で判定する(制御文字を抜ききれていない？)
-				if (Type.Contains("VARCHAR2")) return "string";
-				if (Type.Contains("CHAR")) return "string";
-				if (Type.Contains("DATE")) return "DateTime";
-				if (Type.Contains("NUMBER")) return "decimal";
-				return "object";
+				switch (Type)
+				{
+					case "VARCHAR2":
+						return "string";
+					case "CHAR":
+						return "string";
+					case "DATE":
+						return "DateTime";
+					case "NUMBER":
+						return "decimal";
+					default:
+						return "object";
+				}
 			}
 		}
 
