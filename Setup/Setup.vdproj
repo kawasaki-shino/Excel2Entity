@@ -118,12 +118,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9445714DB96E5808554F87E976AED722"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -187,6 +181,12 @@
         "OwnerKey" = "8:_A2991658DAE9223A62CBEFE5D58E1AFC"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9445714DB96E5808554F87E976AED722"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -205,6 +205,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -694,15 +702,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Excel2Entity"
-        "ProductCode" = "8:{B53734CE-39FF-4608-8506-85C5B0EFF7F5}"
-        "PackageCode" = "8:{223A1E39-4FFF-4678-86C8-757299811ABF}"
+        "ProductCode" = "8:{DD62E873-1C5C-4BF0-B14C-553204F37037}"
+        "PackageCode" = "8:{1DDE0C6B-4A9C-432D-9727-8C59BDF5515D}"
         "UpgradeCode" = "8:{B802710E-09BE-4E2C-94F9-B25E2B01305C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.22.07191"
         "Manufacturer" = "8:nanairo"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
