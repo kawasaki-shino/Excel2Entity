@@ -15,176 +15,176 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_054A3888E676BDF19A99159776389025"
-        "OwnerKey" = "8:_38F11441F49DBA267F668B1B04C2FC7A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_054A3888E676BDF19A99159776389025"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_150F7C3549D74AE7A94FB494241F3715"
+        "MsmKey" = "8:_391A39D41B864BDF920956BFEAD3DCDC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1A0DF6800F41F36325DDF9968E1C9388"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "MsmKey" = "8:_3DCC1FFE4382B79799B27A148497EFE2"
+        "OwnerKey" = "8:_785BBFBB2F8C8BA5CEFB443E681A1832"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2B7EF8192522DB14418DDF3BD563B411"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "MsmKey" = "8:_3DCC1FFE4382B79799B27A148497EFE2"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_38F11441F49DBA267F668B1B04C2FC7A"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "MsmKey" = "8:_44DCFCB8AD4256A313675BB5A996EFA0"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_3B00BD9C8A06C99D6F6A500FB60B6D95"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "MsmKey" = "8:_4DC5D33C2BC6E6C6008D6F8E8C83EE86"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_59541C888A9BA0A5DD1851E9B3CE1FA2"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "MsmKey" = "8:_533B33736C4A76BD032E7A72518800DD"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "MsmKey" = "8:_533B33736C4A76BD032E7A72518800DD"
+        "OwnerKey" = "8:_4DC5D33C2BC6E6C6008D6F8E8C83EE86"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7647FBE5FB8BFEA2102AA5CE98C001CA"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_785BBFBB2F8C8BA5CEFB443E681A1832"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_843EEF58D65B94A82FFFC9A69E6E5E2A"
+        "OwnerKey" = "8:_785BBFBB2F8C8BA5CEFB443E681A1832"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_843EEF58D65B94A82FFFC9A69E6E5E2A"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9445714DB96E5808554F87E976AED722"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A2991658DAE9223A62CBEFE5D58E1AFC"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_754855C6D77989767C6A72A2300F5BBA"
-        "OwnerKey" = "8:_38F11441F49DBA267F668B1B04C2FC7A"
+        "MsmKey" = "8:_BFEA5199A8BCF10CC632AD7E828F631E"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_754855C6D77989767C6A72A2300F5BBA"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "MsmKey" = "8:_BFEA5199A8BCF10CC632AD7E828F631E"
+        "OwnerKey" = "8:_7647FBE5FB8BFEA2102AA5CE98C001CA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_92E5072CD8357AA5817653847EC84F91"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B05B751DA62FA806751D40FA87A8ABEE"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B05B751DA62FA806751D40FA87A8ABEE"
-        "OwnerKey" = "8:_F9FBB6CD990C3B4A011AEAEF1A44DCD3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BAF9DB00AEEB2941689CEB3E90C6EAEF"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BAF9DB00AEEB2941689CEB3E90C6EAEF"
-        "OwnerKey" = "8:_92E5072CD8357AA5817653847EC84F91"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F9FBB6CD990C3B4A011AEAEF1A44DCD3"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "MsmKey" = "8:_C02CFC1556798448B450DAAC122D7A3B"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+        "OwnerKey" = "8:_9445714DB96E5808554F87E976AED722"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F9FBB6CD990C3B4A011AEAEF1A44DCD3"
+        "OwnerKey" = "8:_BB8064950F7D4093B54204FD75F789E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B05B751DA62FA806751D40FA87A8ABEE"
+        "OwnerKey" = "8:_7647FBE5FB8BFEA2102AA5CE98C001CA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2B7EF8192522DB14418DDF3BD563B411"
+        "OwnerKey" = "8:_BFEA5199A8BCF10CC632AD7E828F631E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_92E5072CD8357AA5817653847EC84F91"
+        "OwnerKey" = "8:_44DCFCB8AD4256A313675BB5A996EFA0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BAF9DB00AEEB2941689CEB3E90C6EAEF"
+        "OwnerKey" = "8:_4DC5D33C2BC6E6C6008D6F8E8C83EE86"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_59541C888A9BA0A5DD1851E9B3CE1FA2"
+        "OwnerKey" = "8:_533B33736C4A76BD032E7A72518800DD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_38F11441F49DBA267F668B1B04C2FC7A"
+        "OwnerKey" = "8:_C02CFC1556798448B450DAAC122D7A3B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_754855C6D77989767C6A72A2300F5BBA"
+        "OwnerKey" = "8:_785BBFBB2F8C8BA5CEFB443E681A1832"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_054A3888E676BDF19A99159776389025"
+        "OwnerKey" = "8:_3DCC1FFE4382B79799B27A148497EFE2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3B00BD9C8A06C99D6F6A500FB60B6D95"
+        "OwnerKey" = "8:_843EEF58D65B94A82FFFC9A69E6E5E2A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1A0DF6800F41F36325DDF9968E1C9388"
+        "OwnerKey" = "8:_A2991658DAE9223A62CBEFE5D58E1AFC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -205,14 +205,6 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
-            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
-            {
-            "Enabled" = "11:TRUE"
-            "PromptEnabled" = "11:TRUE"
-            "PrerequisitesLocation" = "2:1"
-            "Url" = "8:"
-            "ComponentsUrl" = "8:"
-            }
         }
         "Release"
         {
@@ -231,7 +223,7 @@
         "InstallerBootstrapper" = "3:2"
             "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
             {
-            "Enabled" = "11:TRUE"
+            "Enabled" = "11:FALSE"
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
@@ -240,7 +232,7 @@
                 {
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
                     {
-                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 および x64)"
                     "ProductCode" = "8:.NETFramework,Version=v4.7.2"
                     }
                 }
@@ -262,7 +254,7 @@
         {
             "LaunchCondition"
             {
-                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_56538A9114C444B6B41C821F62A01B9D"
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_8557C4808068454395F096344B8CFAE7"
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
@@ -274,43 +266,12 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_054A3888E676BDF19A99159776389025"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_054A3888E676BDF19A99159776389025"
-                    {
-                    "Name" = "8:DocumentFormat.OpenXml.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:DocumentFormat.OpenXml.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_150F7C3549D74AE7A94FB494241F3715"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_391A39D41B864BDF920956BFEAD3DCDC"
             {
             "SourcePath" = "8:..\\Excel2Entity\\Resources\\Icon.ico"
             "TargetName" = "8:Icon.ico"
             "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -325,169 +286,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1A0DF6800F41F36325DDF9968E1C9388"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.IO.FileSystem.Primitives, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_1A0DF6800F41F36325DDF9968E1C9388"
-                    {
-                    "Name" = "8:System.IO.FileSystem.Primitives.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.IO.FileSystem.Primitives.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2B7EF8192522DB14418DDF3BD563B411"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2B7EF8192522DB14418DDF3BD563B411"
-                    {
-                    "Name" = "8:System.IO.Packaging.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.IO.Packaging.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_38F11441F49DBA267F668B1B04C2FC7A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_38F11441F49DBA267F668B1B04C2FC7A"
-                    {
-                    "Name" = "8:ClosedXML.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ClosedXML.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3B00BD9C8A06C99D6F6A500FB60B6D95"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_3B00BD9C8A06C99D6F6A500FB60B6D95"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_59541C888A9BA0A5DD1851E9B3CE1FA2"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_59541C888A9BA0A5DD1851E9B3CE1FA2"
-                    {
-                    "Name" = "8:FontAwesome.WPF.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:FontAwesome.WPF.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_754855C6D77989767C6A72A2300F5BBA"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3DCC1FFE4382B79799B27A148497EFE2"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_754855C6D77989767C6A72A2300F5BBA"
+                    "_3DCC1FFE4382B79799B27A148497EFE2"
                     {
                     "Name" = "8:ExcelNumberFormat.dll"
                     "Attributes" = "3:512"
@@ -496,7 +302,7 @@
             "SourcePath" = "8:ExcelNumberFormat.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -511,14 +317,45 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_92E5072CD8357AA5817653847EC84F91"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_44DCFCB8AD4256A313675BB5A996EFA0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_44DCFCB8AD4256A313675BB5A996EFA0"
+                    {
+                    "Name" = "8:System.IO.Packaging.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.IO.Packaging.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4DC5D33C2BC6E6C6008D6F8E8C83EE86"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:MaterialDesignThemes.Wpf, Version=4.5.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_92E5072CD8357AA5817653847EC84F91"
+                    "_4DC5D33C2BC6E6C6008D6F8E8C83EE86"
                     {
                     "Name" = "8:MaterialDesignThemes.Wpf.dll"
                     "Attributes" = "3:512"
@@ -527,7 +364,7 @@
             "SourcePath" = "8:MaterialDesignThemes.Wpf.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -542,45 +379,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B05B751DA62FA806751D40FA87A8ABEE"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_B05B751DA62FA806751D40FA87A8ABEE"
-                    {
-                    "Name" = "8:Microsoft.WindowsAPICodePack.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.WindowsAPICodePack.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BAF9DB00AEEB2941689CEB3E90C6EAEF"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_533B33736C4A76BD032E7A72518800DD"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:MaterialDesignColors, Version=2.0.6.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BAF9DB00AEEB2941689CEB3E90C6EAEF"
+                    "_533B33736C4A76BD032E7A72518800DD"
                     {
                     "Name" = "8:MaterialDesignColors.dll"
                     "Attributes" = "3:512"
@@ -589,7 +395,7 @@
             "SourcePath" = "8:MaterialDesignColors.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -604,14 +410,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F9FBB6CD990C3B4A011AEAEF1A44DCD3"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7647FBE5FB8BFEA2102AA5CE98C001CA"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F9FBB6CD990C3B4A011AEAEF1A44DCD3"
+                    "_7647FBE5FB8BFEA2102AA5CE98C001CA"
                     {
                     "Name" = "8:Microsoft.WindowsAPICodePack.Shell.dll"
                     "Attributes" = "3:512"
@@ -620,7 +426,193 @@
             "SourcePath" = "8:Microsoft.WindowsAPICodePack.Shell.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_785BBFBB2F8C8BA5CEFB443E681A1832"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_785BBFBB2F8C8BA5CEFB443E681A1832"
+                    {
+                    "Name" = "8:ClosedXML.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ClosedXML.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_843EEF58D65B94A82FFFC9A69E6E5E2A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_843EEF58D65B94A82FFFC9A69E6E5E2A"
+                    {
+                    "Name" = "8:DocumentFormat.OpenXml.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:DocumentFormat.OpenXml.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9445714DB96E5808554F87E976AED722"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.IO.FileSystem.Primitives, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_9445714DB96E5808554F87E976AED722"
+                    {
+                    "Name" = "8:System.IO.FileSystem.Primitives.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.IO.FileSystem.Primitives.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A2991658DAE9223A62CBEFE5D58E1AFC"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_A2991658DAE9223A62CBEFE5D58E1AFC"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BFEA5199A8BCF10CC632AD7E828F631E"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_BFEA5199A8BCF10CC632AD7E828F631E"
+                    {
+                    "Name" = "8:Microsoft.WindowsAPICodePack.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.WindowsAPICodePack.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C02CFC1556798448B450DAAC122D7A3B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C02CFC1556798448B450DAAC122D7A3B"
+                    {
+                    "Name" = "8:FontAwesome.WPF.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FontAwesome.WPF.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -641,7 +633,29 @@
         }
         "Folder"
         {
-            "{3C67513D-01DD-4637-8A68-80971EB9504F}:_74BBB43BF2844DC89F0959E796F6367D"
+            "{1525181F-901A-416C-8A58-119130FE478E}:_59C130A9F87C44B688CDE553EBFF6BE3"
+            {
+            "Name" = "8:#1919"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:ProgramMenuFolder"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_8FDB828E55C9489B8F4CCA4222578D3C"
+                    {
+                    "Name" = "8:Excel2Entity"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_143454801C3245D693FD6FC1F9CCDDC8"
+                        "Folders"
+                        {
+                        }
+                    }
+                }
+            }
+            "{3C67513D-01DD-4637-8A68-80971EB9504F}:_7BB4AD87BE9142E997C892CD79014DDB"
             {
             "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
             "Name" = "8:#1925"
@@ -653,7 +667,7 @@
                 {
                 }
             }
-            "{1525181F-901A-416C-8A58-119130FE478E}:_E41674FBB50D40AA9216E919C3DE509A"
+            "{1525181F-901A-416C-8A58-119130FE478E}:_F644B4C7B969402A8EE956C51A41BCC2"
             {
             "Name" = "8:#1916"
             "AlwaysCreate" = "11:TRUE"
@@ -662,28 +676,6 @@
             "Property" = "8:DesktopFolder"
                 "Folders"
                 {
-                }
-            }
-            "{1525181F-901A-416C-8A58-119130FE478E}:_E9A852A9DD6543F38C97DFA41A0B03D6"
-            {
-            "Name" = "8:#1919"
-            "AlwaysCreate" = "11:FALSE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Property" = "8:ProgramMenuFolder"
-                "Folders"
-                {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_2E482B50940E47F397BA06988F14378B"
-                    {
-                    "Name" = "8:Excel2Entity"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_378C092C24E747B490FED08ED9A4C791"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
         }
@@ -702,9 +694,9 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Excel2Entity"
-        "ProductCode" = "8:{D357F756-7E6C-4FC3-A552-793CC871F44B}"
-        "PackageCode" = "8:{A14B87AB-8CD9-46FB-A24A-05A5BCFE9C67}"
-        "UpgradeCode" = "8:{95E8C781-2B22-487A-B6AB-32E542984272}"
+        "ProductCode" = "8:{B53734CE-39FF-4608-8506-85C5B0EFF7F5}"
+        "PackageCode" = "8:{223A1E39-4FFF-4678-86C8-757299811ABF}"
+        "UpgradeCode" = "8:{B802710E-09BE-4E2C-94F9-B25E2B01305C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -714,7 +706,7 @@
         "Manufacturer" = "8:nanairo"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Excel2EntitySetup"
+        "Title" = "8:Setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:nanairo"
         "Keywords" = "8:"
@@ -735,7 +727,7 @@
             {
                 "Keys"
                 {
-                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_CA6CA8AE2AE84D0289446D21499C035A"
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_C8F96D22D7A749B3A9061BEED2867C09"
                     {
                     "Name" = "8:Software"
                     "Condition" = "8:"
@@ -744,7 +736,7 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_E56AD9A8BE16436CAAC5273725435813"
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_A18E7CBF59E141EC9F70BB3F21219990"
                             {
                             "Name" = "8:[Manufacturer]"
                             "Condition" = "8:"
@@ -769,7 +761,7 @@
             {
                 "Keys"
                 {
-                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_510DF8E001674D5B97650D61B26C50A7"
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_202A3BFF9C81420F9978DF8C404B54E8"
                     {
                     "Name" = "8:Software"
                     "Condition" = "8:"
@@ -778,7 +770,7 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_CBA9A90C5F4447299362393ACA43A9EE"
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_325A94AE9A6D4AC2ABA3422972C8BB12"
                             {
                             "Name" = "8:[Manufacturer]"
                             "Condition" = "8:"
@@ -823,7 +815,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_06521BF95DD44BC8B25ADC83242064E9"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4E57E226E26A4D8385B2881363FB0D4E"
             {
             "Name" = "8:Excel2Entity"
             "Arguments" = "8:"
@@ -831,13 +823,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
-            "Folder" = "8:_E41674FBB50D40AA9216E919C3DE509A"
-            "WorkingFolder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Icon" = "8:_150F7C3549D74AE7A94FB494241F3715"
+            "Target" = "8:_BB8064950F7D4093B54204FD75F789E6"
+            "Folder" = "8:_8FDB828E55C9489B8F4CCA4222578D3C"
+            "WorkingFolder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Icon" = "8:_391A39D41B864BDF920956BFEAD3DCDC"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AA20D63B8FB648308396C0254D4F1965"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8395E832CCAA40B594B52375D0CF8874"
             {
             "Name" = "8:Excel2Entity"
             "Arguments" = "8:"
@@ -845,73 +837,23 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
-            "Folder" = "8:_2E482B50940E47F397BA06988F14378B"
-            "WorkingFolder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
-            "Icon" = "8:_150F7C3549D74AE7A94FB494241F3715"
+            "Target" = "8:_BB8064950F7D4093B54204FD75F789E6"
+            "Folder" = "8:_F644B4C7B969402A8EE956C51A41BCC2"
+            "WorkingFolder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
+            "Icon" = "8:_391A39D41B864BDF920956BFEAD3DCDC"
             "Feature" = "8:"
             }
         }
         "UserInterface"
         {
-            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_24348880BFEB4CDA8421BE0F8AD0E46E"
-            {
-            "UseDynamicProperties" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:<VsdDialogDir>\\VsdBasicDialogs.wim"
-            }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_43EB551254344307BB48F8F59CD4B99D"
-            {
-            "Name" = "8:#1901"
-            "Sequence" = "3:1"
-            "Attributes" = "3:2"
-                "Dialogs"
-                {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_8549AC5562F842B99592D73DF87A9E91"
-                    {
-                    "Sequence" = "3:100"
-                    "DisplayName" = "8:進行状況"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
-                        "Properties"
-                        {
-                            "BannerBitmap"
-                            {
-                            "Name" = "8:BannerBitmap"
-                            "DisplayName" = "8:#1001"
-                            "Description" = "8:#1101"
-                            "Type" = "3:8"
-                            "ContextData" = "8:Bitmap"
-                            "Attributes" = "3:4"
-                            "Setting" = "3:1"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                            "ShowProgress"
-                            {
-                            "Name" = "8:ShowProgress"
-                            "DisplayName" = "8:#1009"
-                            "Description" = "8:#1109"
-                            "Type" = "3:5"
-                            "ContextData" = "8:1;True=1;False=0"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:0"
-                            "Value" = "3:1"
-                            "DefaultValue" = "3:1"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                        }
-                    }
-                }
-            }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_5BC5F7EC36524330944155229C27C469"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_03F960443F424399A4F6A813D7EBD5A1"
             {
             "Name" = "8:#1901"
             "Sequence" = "3:2"
             "Attributes" = "3:2"
                 "Dialogs"
                 {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_D6FA33B0685642DFBAAA0A8B0ECC5D8A"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_B3710FE01973469DA995C459949456A0"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:進行状況"
@@ -948,64 +890,20 @@
                     }
                 }
             }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_832D65E5C9D04FC0A87A695375784F0F"
-            {
-            "Name" = "8:#1902"
-            "Sequence" = "3:1"
-            "Attributes" = "3:3"
-                "Dialogs"
-                {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C0C8EDBDE6394BCF8C43FF507ACEA51F"
-                    {
-                    "Sequence" = "3:100"
-                    "DisplayName" = "8:完了"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
-                        "Properties"
-                        {
-                            "BannerBitmap"
-                            {
-                            "Name" = "8:BannerBitmap"
-                            "DisplayName" = "8:#1001"
-                            "Description" = "8:#1101"
-                            "Type" = "3:8"
-                            "ContextData" = "8:Bitmap"
-                            "Attributes" = "3:4"
-                            "Setting" = "3:1"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                            "UpdateText"
-                            {
-                            "Name" = "8:UpdateText"
-                            "DisplayName" = "8:#1058"
-                            "Description" = "8:#1158"
-                            "Type" = "3:15"
-                            "ContextData" = "8:"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1258"
-                            "DefaultValue" = "8:#1258"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                        }
-                    }
-                }
-            }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_8F5FFBA57CCD4686A4E25BBB9306E855"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_16B60855A055439BAB8F9770AABE6A95"
             {
             "Name" = "8:#1900"
             "Sequence" = "3:2"
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_1C582C53CC6E4A9F97BAFC61A1929466"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_40658C5BAAA04FB1A9C735C8D9A5100A"
                     {
-                    "Sequence" = "3:200"
-                    "DisplayName" = "8:インストール フォルダー"
+                    "Sequence" = "3:300"
+                    "DisplayName" = "8:インストールの確認"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
                         "Properties"
                         {
                             "BannerBitmap"
@@ -1021,7 +919,7 @@
                             }
                         }
                     }
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_37452E078B6B421DA8DEF079B1BF24C6"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7C28EAE8D195474FA82469FB88AB21B6"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:ようこそ"
@@ -1069,13 +967,13 @@
                             }
                         }
                     }
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_989F6F81E4334879ACE07F13DF9B0EC3"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_9F995B83C8394D56A53CB1ADC9C2BCBB"
                     {
-                    "Sequence" = "3:300"
-                    "DisplayName" = "8:インストールの確認"
+                    "Sequence" = "3:200"
+                    "DisplayName" = "8:インストール フォルダー"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
                         "Properties"
                         {
                             "BannerBitmap"
@@ -1093,14 +991,58 @@
                     }
                 }
             }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_C6E356F5579944DC88477D8B8AEDA2E0"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_5291770E68F542E39E76A6DD27BCE859"
+            {
+            "Name" = "8:#1902"
+            "Sequence" = "3:1"
+            "Attributes" = "3:3"
+                "Dialogs"
+                {
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_D4C0BC52A1F74CF2BDE63457FF1D588C"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:完了"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "UpdateText"
+                            {
+                            "Name" = "8:UpdateText"
+                            "DisplayName" = "8:#1058"
+                            "Description" = "8:#1158"
+                            "Type" = "3:15"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:1"
+                            "Value" = "8:#1258"
+                            "DefaultValue" = "8:#1258"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                }
+            }
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_5A5E2CF9F9CA466EAF294380A0D42402"
             {
             "Name" = "8:#1902"
             "Sequence" = "3:2"
             "Attributes" = "3:3"
                 "Dialogs"
                 {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_E9614EF13B49405C9EBC7129B9B20B8F"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_29AE541F6D544A99998BBCF6033E624D"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:完了"
@@ -1124,14 +1066,80 @@
                     }
                 }
             }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_D00DE7BDBB2E4CF0A01041179B830465"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_7841C5631092454DBA3CAD217C671958"
+            {
+            "Name" = "8:#1901"
+            "Sequence" = "3:1"
+            "Attributes" = "3:2"
+                "Dialogs"
+                {
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_75DBEC82C19F4FDF95695BA0268ABE4E"
+                    {
+                    "Sequence" = "3:100"
+                    "DisplayName" = "8:進行状況"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "ShowProgress"
+                            {
+                            "Name" = "8:ShowProgress"
+                            "DisplayName" = "8:#1009"
+                            "Description" = "8:#1109"
+                            "Type" = "3:5"
+                            "ContextData" = "8:1;True=1;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:1"
+                            "DefaultValue" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                }
+            }
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_849B0BB9C3574D84B9F85358CA9BA8AE"
             {
             "Name" = "8:#1900"
             "Sequence" = "3:1"
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_3FEE1D242CC24D07AE4E6023DAA0FBC0"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_35E4450815704241B0FB5897EC792A27"
+                    {
+                    "Sequence" = "3:300"
+                    "DisplayName" = "8:インストールの確認"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4F1392B9D3ED4EF4BEE7D864E1956B08"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:ようこそ"
@@ -1179,29 +1187,7 @@
                             }
                         }
                     }
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_ACA8DBB5803B4816A7A7772ABE3B19EF"
-                    {
-                    "Sequence" = "3:300"
-                    "DisplayName" = "8:インストールの確認"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
-                        "Properties"
-                        {
-                            "BannerBitmap"
-                            {
-                            "Name" = "8:BannerBitmap"
-                            "DisplayName" = "8:#1001"
-                            "Description" = "8:#1101"
-                            "Type" = "3:8"
-                            "ContextData" = "8:Bitmap"
-                            "Attributes" = "3:4"
-                            "Setting" = "3:1"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                        }
-                    }
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_ACEB13AD4FD14022BD0198EABBC51A89"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_B91C859555DA4A9DA4740F2090D4E61D"
                     {
                     "Sequence" = "3:200"
                     "DisplayName" = "8:インストール フォルダー"
@@ -1238,7 +1224,13 @@
                     }
                 }
             }
-            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_FFAE4610B6584804950C75C02BE7D345"
+            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_B51859DA43BA4637B0BB748D78E0FDC4"
+            {
+            "UseDynamicProperties" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:<VsdDialogDir>\\VsdBasicDialogs.wim"
+            }
+            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_C6277B6E91274A529A615377C53DF8EF"
             {
             "UseDynamicProperties" = "11:FALSE"
             "IsDependency" = "11:FALSE"
@@ -1250,12 +1242,12 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5B2BBA3BBA2740D5BB62E9EFC8F7412A"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BB8064950F7D4093B54204FD75F789E6"
             {
             "SourcePath" = "8:..\\Excel2Entity\\obj\\Release\\Excel2Entity.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_74BBB43BF2844DC89F0959E796F6367D"
+            "Folder" = "8:_7BB4AD87BE9142E997C892CD79014DDB"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
