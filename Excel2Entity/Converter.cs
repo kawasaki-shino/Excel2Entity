@@ -1,10 +1,9 @@
-﻿using System;
-using ClosedXML.Excel;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Windows;
 
 namespace Excel2Entity
 {
@@ -48,6 +47,28 @@ namespace Excel2Entity
 						ClassName = GenerateClassName(CustomTrim(sheet.Cell("C7").Value.ToString()))
 					};
 
+					// カラムを読み込む
+					for (var i = 14; i < 1000; i++)
+					{
+						var b = CustomTrim(sheet.Cell($"B{i}").Value.ToString());
+						var c = CustomTrim(sheet.Cell($"C{i}").Value.ToString());
+						var d = CustomTrim(sheet.Cell($"D{i}").Value.ToString());
+						var g = CustomTrim(sheet.Cell($"G{i}").Value.ToString());
+						var j = CustomTrim(sheet.Cell($"J{i}").Value.ToString());
+
+						// 論理名が空ならループを抜ける
+						if (string.IsNullOrWhiteSpace(b)) break;
+
+						table.ColumnsList.Add(new Columns
+						{
+							LogicalName = b,
+							PhysicsName = c,
+							Type = d,
+							Default = g,
+							Required = j == "○"
+						});
+					}
+
 					Files.Add(table);
 				}
 			}
@@ -67,56 +88,26 @@ namespace Excel2Entity
 		/// <param name="namespc"></param>
 		public void OutputCs(string folder, string namespc)
 		{
-			var index = 0;
-
-			foreach (var sheet in Book.Worksheets)
+			foreach (var file in Files)
 			{
-				var list = new List<Columns>();
-
-				// 目次は飛ばす
-				if (sheet.Position == 1) continue;
-				// 非表示のシートは飛ばす
-				if (sheet.Visibility != XLWorksheetVisibility.Visible) continue;
-
 				// 対象外なら次のシート
-				if (!Files[index].Target)
+				if (!file.Target)
 				{
-					index++;
 					continue;
 				}
 
-				// カラムを読み込む
-				for (var i = 14; i < 1000; i++)
-				{
-					var b = CustomTrim(sheet.Cell($"B{i}").Value.ToString());
-					var c = CustomTrim(sheet.Cell($"C{i}").Value.ToString());
-					var d = CustomTrim(sheet.Cell($"D{i}").Value.ToString());
-					var g = CustomTrim(sheet.Cell($"G{i}").Value.ToString());
+				var contents = $@"using System;
 
-					// 論理名が空ならループを抜ける
-					if (string.IsNullOrWhiteSpace(b)) break;
-
-					var columns = new Columns()
-					{
-						LogicalName = b,
-						PhysicsName = c,
-						Type = d,
-						Default = g
-					};
-					list.Add(columns);
-				}
-
-
-				var contents = $@"namespace {namespc}
+namespace {namespc}
 {{
-	public class {Files[index].ClassName}
+	public class {file.ClassName}
 	{{";
 
-				foreach (var item in list)
+				foreach (var item in file.ColumnsList)
 				{
 					contents += $@"
 		/// <summary>{item.LogicalName}</summary>
-		public {item.CsType} {item.CamelCasePhysicsName} {{ get; set; }}
+		public {item.CsType.GetAliasName()}{item.Nullable} {item.CamelCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default)}
 ";
 				}
 
@@ -124,9 +115,7 @@ namespace Excel2Entity
 }
 ";
 
-				File.WriteAllText(Path.Combine(folder, $"{Files[index].ClassName}.cs"), contents);
-
-				index++;
+				File.WriteAllText(Path.Combine(folder, $"{file.ClassName}.cs"), contents);
 			}
 		}
 
@@ -156,6 +145,26 @@ namespace Excel2Entity
 			value = value.Trim().Trim('\u200B');
 			// 制御文字を抜く
 			return new string(value.Where(c => !char.IsControl(c)).ToArray());
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="itemType"></param>
+		/// <param name="itemDefault"></param>
+		/// <returns></returns>
+		private string GetDefaultString(Type itemType, string itemDefault)
+		{
+			// 初期値指定なしなら抜ける
+			if (string.IsNullOrWhiteSpace(itemDefault)) return "";
+
+			// 文字列意外は初期値をそのまま出力
+			if (itemType != typeof(string)) return $" = {itemDefault.Replace("'", "")};";
+
+			// 文字列型かつ空が初期値
+			if (itemDefault == "''" || itemDefault == "'''") return @" = """";";
+			// それ以外はダブルクオーテーションで囲って出力
+			return $@" = ""{itemDefault.Replace("'", "")}"";";
 		}
 	}
 }

@@ -5,7 +5,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Excel2Entity" Height="700" Width="1000" WindowStartupLocation="CenterScreen" Icon="Resources/Icon.ico">
+        Title="Excel2Entity" Height="800" Width="1000" WindowStartupLocation="CenterScreen" Icon="Resources/Icon.ico">
 
 	<Window.Resources>
 		<FontFamily x:Key="FontAwesome">pack://application:,,,/FontAwesome.WPF;component/#FontAwesome</FontFamily>
@@ -22,7 +22,9 @@
 			<RowDefinition Height="32" />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="8" />
-			<RowDefinition Height="*" />
+			<RowDefinition Height="2*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="3*" />
 			<RowDefinition Height="8" />
 			<RowDefinition Height="32" />
 			<RowDefinition Height="8" />
@@ -36,7 +38,7 @@
 
 		<Label Grid.Row="1" Grid.Column="1">※ファイルのドラッグドロップ可</Label>
 
-		<DataGrid x:Name="DgClass" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" AutoGenerateColumns="False" CanUserAddRows="False">
+		<DataGrid x:Name="DgClass" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" AutoGenerateColumns="False" CanUserAddRows="False" BorderThickness="1">
 			<DataGrid.Columns>
 				<DataGridCheckBoxColumn Binding="{Binding Target}" Header="対象" CanUserResize="False" />
 				<DataGridTextColumn Binding="{Binding LogicalName}" Header="論理名" Width="400" IsReadOnly="True" />
@@ -45,14 +47,32 @@
 			</DataGrid.Columns>
 		</DataGrid>
 
-		<Label Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">出力先</Label>
-		<TextBox x:Name="TbxFolder" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" />
-		<Button x:Name="BtnFolder" Grid.Row="5" Grid.Column="3" fa:Awesome.Content="FolderOpen" FontFamily="{StaticResource FontAwesome}" />
+		<Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,8,0,0">詳細</Label>
 
-		<Label Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">namespace</Label>
-		<TextBox x:Name="TbxNamespace" Grid.Row="7" Grid.Column="1" VerticalContentAlignment="Center" />
+		<DataGrid x:Name="DgColumn" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" AutoGenerateColumns="False" CanUserAddRows="False" BorderThickness="1">
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{Binding LogicalName}" Header="論理名" Width="*" IsReadOnly="True" />
+				<DataGridTextColumn Binding="{Binding PhysicsName}" Header="物理名" Width="*" IsReadOnly="True" />
+				<DataGridTextColumn Binding="{Binding CamelCasePhysicsName}" Header="プロパティ名" Width="*" IsReadOnly="False" />
+				<DataGridTemplateColumn Header="型" Width="150" IsReadOnly="False">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<ComboBox x:Name="CmbType" ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.CsTypes, Mode=TwoWay}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding CsType, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" />
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTextColumn Binding="{Binding Default}" Header="初期値" Width="100" IsReadOnly="False" />
+			</DataGrid.Columns>
+		</DataGrid>
 
-		<Button x:Name="BtnOutput" Grid.Row="8" Grid.Column="1" Width="100" Height="30" VerticalAlignment="Bottom">
+		<Label Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">出力先</Label>
+		<TextBox x:Name="TbxFolder" Grid.Row="7" Grid.Column="1" VerticalContentAlignment="Center" />
+		<Button x:Name="BtnFolder" Grid.Row="7" Grid.Column="3" fa:Awesome.Content="FolderOpen" FontFamily="{StaticResource FontAwesome}" />
+
+		<Label Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">namespace</Label>
+		<TextBox x:Name="TbxNamespace" Grid.Row="9" Grid.Column="1" VerticalContentAlignment="Center" />
+
+		<Button x:Name="BtnOutput" Grid.Row="10" Grid.Column="1" Width="100" Height="30" VerticalAlignment="Bottom">
 			<StackPanel Orientation="Horizontal">
 				<fa:ImageAwesome Icon="Download" Width="20" Height="20" Foreground="White" />
 				<Label Content="出力" FontSize="12" Foreground="White" Margin="8,0,0,0" />

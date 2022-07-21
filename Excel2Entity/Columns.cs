@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace Excel2Entity
 {
@@ -7,35 +8,60 @@ namespace Excel2Entity
 		/// <summary>論理名</summary>
 		public string LogicalName { get; set; }
 
+		private string _physicsName;
 		/// <summary>物理名</summary>
-		public string PhysicsName { get; set; }
+		public string PhysicsName
+		{
+			get => _physicsName;
+			set
+			{
+				_physicsName = value;
+				CamelCasePhysicsName = GeneratePropertyName(_physicsName);
+			}
+		}
 
 		/// <summary>物理名(キャメルケース)</summary>
-		public string CamelCasePhysicsName => GeneratePropertyName(PhysicsName);
+		public string CamelCasePhysicsName { get; set; }
 
+		private string _type;
 		/// <summary>型</summary>
-		public string Type { get; set; }
-
-		/// <summary>型(C#)</summary>
-		public string CsType
+		public string Type
 		{
-			get
+			get => _type;
+			set
 			{
-				switch (Type)
+				_type = value;
+
+				switch (_type)
 				{
 					case "VARCHAR2":
-						return "string";
+						CsType = typeof(string);
+						break;
 					case "CHAR":
-						return "string";
+						CsType = typeof(string);
+						break;
 					case "DATE":
-						return "DateTime";
+						CsType = typeof(DateTime);
+						break;
 					case "NUMBER":
-						return "decimal";
+						CsType = typeof(decimal);
+						break;
 					default:
-						return "object";
+						CsType = typeof(object);
+						break;
 				}
 			}
 		}
+
+		/// <summary>型(C#)</summary>
+		public Type CsType { get; set; }
+
+		/// <summary>必須</summary>
+		public bool Required { get; set; }
+
+		public string Nullable => !Required && Type == "NUMBER"
+			? "?"
+			: "";
 
 		/// <summary>初期値</summary>
 		public string Default { get; set; }

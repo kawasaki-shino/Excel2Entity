@@ -1,8 +1,11 @@
 ﻿using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Excel2Entity
 {
@@ -13,9 +16,19 @@ namespace Excel2Entity
 	{
 		public Converter Converter { get; set; }
 
+		public ObservableCollection<CsTypes> CsTypes { get; set; } = new ObservableCollection<CsTypes>()
+		{
+			new CsTypes(name: typeof(string).GetAliasName(), value: typeof(string)),
+			new CsTypes(name: typeof(decimal).GetAliasName(), value: typeof(decimal)),
+			new CsTypes(name: typeof(DateTime).GetAliasName(), value: typeof(DateTime)),
+			new CsTypes(name: typeof(object).GetAliasName(), value: typeof(object)),
+		};
+
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			DataContext = this;
 
 			Loaded += (s, e) =>
 			{
@@ -41,8 +54,9 @@ namespace Excel2Entity
 				var files = (string[])e.Data.GetData(DataFormats.FileDrop);
 				if (files == null) return;
 
-				TbxExcel.Text = files[0];
-				LoadExcel(files[0]);
+				TbxExcel.Text = LoadExcel(files[0])
+					? files[0]
+					: "";
 			};
 
 			// ファイルを開くボタンクリックイベントハンドラ
@@ -55,8 +69,9 @@ namespace Excel2Entity
 
 				if (dialog.ShowDialog() == true)
 				{
-					TbxExcel.Text = dialog.FileName;
-					LoadExcel(dialog.FileName);
+					TbxExcel.Text = LoadExcel(dialog.FileName)
+						? dialog.FileName
+						: "";
 				}
 			};
 
@@ -85,19 +100,30 @@ namespace Excel2Entity
 
 				MessageBox.Show(this, "出力が完了しました", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 			};
+
+			// クラス表示 DataGird SelectedCellsChanged
+			DgClass.SelectedCellsChanged += (s, e) =>
+			{
+				// 選択アイテムを取得
+				var item = (Sheets)DgClass.SelectedItem;
+
+				if (item?.ColumnsList != null) DgColumn.ItemsSource = item.ColumnsList;
+
+				SetScrollTop(DgColumn);
+			};
 		}
 
 		/// <summary>
 		/// Excel 読み込み
 		/// </summary>
 		/// <param name="file"></param>
-		void LoadExcel(string file)
+		private bool LoadExcel(string file)
 		{
 			var extention = Path.GetExtension(file);
 			if (extention != ".xlsx")
 			{
 				MessageBox.Show(this, "Excel ファイルのみ読み込み可能です", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-				return;
+				return false;
 			}
 
 			Converter = new Converter(file);
@@ -105,8 +131,28 @@ namespace Excel2Entity
 			// Excel を読み込んで DataGrid にバインド
 			var excel = Converter.LoadExcel();
 			DgClass.ItemsSource = excel;
+			SetScrollTop(DgClass);
 
-			if (excel == null) MessageBox.Show(this, "Excel ファイルが開かれています。閉じてから再度取込を行ってください。", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			DgColumn.ItemsSource = null;
+
+			if (excel == null)
+			{
+				MessageBox.Show(this, "Excel ファイルが開かれています。閉じてから再度取込を行ってください。", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				return false;
+			}
+
+			return true;
+		}
+
+		/// <summary>
+		/// スクロール位置を Top へ移動
+		/// </summary>
+		/// <param name="dg"></param>
+		private void SetScrollTop(DataGrid dg)
+		{
+			var border = VisualTreeHelper.GetChild(dg, 0) as Decorator;
+			var scrollViewer = border?.Child as ScrollViewer;
+			scrollViewer?.ScrollToTop();
 		}
 	}
 }
