@@ -40,6 +40,9 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
