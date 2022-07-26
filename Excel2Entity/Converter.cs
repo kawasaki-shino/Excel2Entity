@@ -1,10 +1,8 @@
-﻿using System;
-using ClosedXML.Excel;
-using System.Collections.Generic;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Windows;
 
 namespace Excel2Entity
 {
@@ -43,10 +41,32 @@ namespace Excel2Entity
 
 					var table = new Sheets
 					{
-						LogicalName = sheet.Cell("C6").Value.ToString(),
-						PhysicsName = sheet.Cell("C7").Value.ToString(),
-						ClassName = GenerateClassName(sheet.Cell("C7").Value.ToString())
+						LogicalName = CustomTrim(sheet.Cell("C6").Value.ToString()),
+						PhysicsName = CustomTrim(sheet.Cell("C7").Value.ToString()),
+						ClassName = GenerateClassName(CustomTrim(sheet.Cell("C7").Value.ToString()))
 					};
+
+					// カラムを読み込む
+					for (var i = 14; i < 1000; i++)
+					{
+						var b = CustomTrim(sheet.Cell($"B{i}").Value.ToString());
+						var c = CustomTrim(sheet.Cell($"C{i}").Value.ToString());
+						var d = CustomTrim(sheet.Cell($"D{i}").Value.ToString());
+						var g = CustomTrim(sheet.Cell($"G{i}").Value.ToString());
+						var j = CustomTrim(sheet.Cell($"J{i}").Value.ToString());
+
+						// 論理名が空ならループを抜ける
+						if (string.IsNullOrWhiteSpace(b)) break;
+
+						table.ColumnsList.Add(new Columns
+						{
+							LogicalName = b,
+							PhysicsName = c,
+							Type = d,
+							Default = g,
+							Required = j == "○"
+						});
+					}
 
 					Files.Add(table);
 				}
@@ -65,70 +85,57 @@ namespace Excel2Entity
 		/// </summary>
 		/// <param name="folder"></param>
 		/// <param name="namespc"></param>
-		public void OutputCs(string folder, string namespc)
+		/// <param name="isInheritNotificationObject"></param>
+		public void OutputCs(string folder, string namespc, bool isInheritNotificationObject)
 		{
-			var index = 0;
-
-			foreach (var sheet in Book.Worksheets)
+			foreach (var file in Files)
 			{
-				var list = new List<Columns>();
-
-				// 目次は飛ばす
-				if (sheet.Position == 1) continue;
-				// 非表示のシートは飛ばす
-				if (sheet.Visibility != XLWorksheetVisibility.Visible) continue;
-
 				// 対象外なら次のシート
-				if (!Files[index].Target)
+				if (!file.Target)
 				{
-					index++;
 					continue;
 				}
 
-				// カラムを読み込む
-				for (var i = 14; i < 1000; i++)
-				{
-					var b = sheet.Cell($"B{i}").Value.ToString();
-					var c = sheet.Cell($"C{i}").Value.ToString();
-					var d = sheet.Cell($"D{i}").Value.ToString();
-					var g = sheet.Cell($"G{i}").Value.ToString();
+				var contents = $@"using System;{(isInheritNotificationObject ? "\r\nusing Wiseman.PJC.WPF.ObjectModel;" : "")}
 
-					// 論理名が空ならループを抜ける
-					if (string.IsNullOrWhiteSpace(b)) break;
-
-					var columns = new Columns()
-					{
-						LogicalName = b,
-						PhysicsName = c,
-						Type = string.IsNullOrWhiteSpace(d)
-							? null
-							: new string(d.Where(t => !char.IsControl(t)).ToArray()),
-						Default = g
-					};
-					list.Add(columns);
-				}
-
-
-				var contents = $@"namespace {namespc}
+namespace {namespc}
 {{
-	public class {Files[index].ClassName}
+	public class {file.ClassName}{(isInheritNotificationObject ? " : NotificationObject" : "")}
 	{{";
 
-				foreach (var item in list)
+				foreach (var item in file.ColumnsList)
 				{
-					contents += $@"
+					if (isInheritNotificationObject)
+					{
+						contents += $@"
+		private {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.PrivateVarName}{GetDefaultString(item.CsType, item.Default, true)}
+
 		/// <summary>{item.LogicalName}</summary>
-		public {item.CsType} {item.CamelCasePhysicsName} {{ get; set; }}
+		public string {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName}
+		{{
+			get => {item.PrivateVarName};
+			set
+			{{
+				{item.PrivateVarName} = value;
+				RaisePropertyChanged();
+			}}
+		}}
 ";
+					}
+					else
+					{
+						contents += $@"
+		/// <summary>{item.LogicalName}</summary>
+		public {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default, false)}
+";
+					}
 				}
 
 				contents += @"	}
 }
 ";
 
-				File.WriteAllText(Path.Combine(folder, $"{Files[index].ClassName}.cs"), contents);
-
-				index++;
+				File.WriteAllText(Path.Combine(folder, $"{file.ClassName}.cs"), contents);
 			}
 		}
 
@@ -144,7 +151,66 @@ namespace Excel2Entity
 			if (words.Length < 2) return "";
 
 			// 任意名称部分の先頭文字を大文字にして返却
-			return Columns.ToUpperCamelCase(words[1]);
+			return $"{Columns.ToUpperCamelCase(words[1])}Entity";
+		}
+
+		/// <summary>
+		/// Excel から取得した文字列中の余計な文字を抜く
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		private string CustomTrim(string value)
+		{
+			// 空白を抜く
+			value = value.Trim().Trim('\u200B');
+			// 制御文字を抜く
+			return new string(value.Where(c => !char.IsControl(c)).ToArray());
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="itemType"></param>
+		/// <param name="itemDefault"></param>
+		/// <param name="isInheritNotificationObject"></param>
+		/// <returns></returns>
+		private string GetDefaultString(Type itemType, string itemDefault, bool isInheritNotificationObject)
+		{
+			// 初期値指定なしなら抜ける
+			if (string.IsNullOrWhiteSpace(itemDefault)) return isInheritNotificationObject
+				? ";"
+				: "";
+
+			// 文字列意外は初期値をそのまま出力
+			if (itemType != typeof(string))
+			{
+				var value = itemDefault.Replace("'", "");
+				return string.IsNullOrEmpty(value)
+					? isInheritNotificationObject
+						? ";"
+						: ""
+					: $" = {value};";
+			}
+
+			// 文字列型かつ空が初期値
+			if (itemDefault == "''" || itemDefault == "'''") return @" = """";";
+			// それ以外はダブルクオーテーションで囲って出力
+			return $@" = ""{itemDefault.Replace("'", "")}"";";
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="required"></param>
+		/// <param name="csType"></param>
+		/// <returns></returns>
+		private string GetNullable(bool required, Type csType)
+		{
+			if (required) return "";
+
+			if (csType.GetAliasName() == typeof(decimal).GetAliasName()) return "?";
+
+			return "";
 		}
 	}
 }

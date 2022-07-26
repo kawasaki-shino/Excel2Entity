@@ -1,4 +1,6 @@
-﻿namespace Excel2Entity
+﻿using System.Collections.Generic;
+
+namespace Excel2Entity
 {
 	public class Sheets
 	{
@@ -13,5 +15,8 @@
 
 		/// <summary>クラス名</summary>
 		public string ClassName { get; set; }
+
+		/// <summary></summary>
+		public List<Columns> ColumnsList { get; set; } = new List<Columns>();
 	}
 }

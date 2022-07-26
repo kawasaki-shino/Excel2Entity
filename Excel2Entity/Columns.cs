@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System;
+using System.Linq;
+using System.Text;
 
 namespace Excel2Entity
 {
@@ -7,28 +9,64 @@ namespace Excel2Entity
 		/// <summary>論理名</summary>
 		public string LogicalName { get; set; }
 
+		private string _physicsName;
 		/// <summary>物理名</summary>
-		public string PhysicsName { get; set; }
-
-		/// <summary>物理名(キャメルケース)</summary>
-		public string CamelCasePhysicsName => GeneratePropertyName(PhysicsName);
-
-		/// <summary>型</summary>
-		public string Type { get; set; }
-
-		/// <summary>型(C#)</summary>
-		public string CsType
+		public string PhysicsName
 		{
-			get
+			get => _physicsName;
+			set
 			{
-				// 単純な文字列比較だと引っかからないので Contains で判定する(制御文字を抜ききれていない？)
-				if (Type.Contains("VARCHAR2")) return "string";
-				if (Type.Contains("CHAR")) return "string";
-				if (Type.Contains("DATE")) return "DateTime";
-				if (Type.Contains("NUMBER")) return "decimal";
-				return "object";
+				_physicsName = value;
+				CamelCasePhysicsName = GeneratePropertyName(_physicsName);
+				PrivateVarName = GeneratePrivateVarName(_physicsName);
 			}
 		}
+
+		/// <summary>物理名(キャメルケース)</summary>
+		public string CamelCasePhysicsName { get; set; }
+
+		/// <summary>private 変数名</summary>
+		public string PrivateVarName { get; set; }
+
+		private string _type;
+		/// <summary>型</summary>
+		public string Type
+		{
+			get => _type;
+			set
+			{
+				_type = value;
+
+				switch (_type)
+				{
+					case "VARCHAR2":
+						CsType = typeof(string);
+						break;
+					case "CHAR":
+						CsType = typeof(string);
+						break;
+					case "DATE":
+						CsType = typeof(DateTime);
+						break;
+					case "NUMBER":
+						CsType = typeof(decimal);
+						break;
+					default:
+						CsType = typeof(object);
+						break;
+				}
+			}
+		}
+
+		/// <summary>型(C#)</summary>
+		public Type CsType { get; set; }
+
+		/// <summary>必須</summary>
+		public bool Required { get; set; }
+
+		public string Nullable => !Required && Type == "NUMBER"
+			? "?"
+			: "";
 
 		/// <summary>初期値</summary>
 		public string Default { get; set; }
@@ -44,7 +82,27 @@ namespace Excel2Entity
 
 			// パース
 			var words = physicsName.Split('_');
-			foreach (var word in words)
+			Array.ForEach(words, x => sb.Append(ToUpperCamelCase(x)));
+
+			return sb.ToString();
+		}
+
+		/// <summary>
+		/// private 変数名
+		/// </summary>
+		/// <param name="physicsName"></param>
+		/// <returns></returns>
+		private string GeneratePrivateVarName(string physicsName)
+		{
+			var sb = new StringBuilder();
+			sb.Append('_');
+
+			// パース
+			var words = physicsName.Split('_');
+
+			sb.Append(words.First().ToLower());
+
+			foreach (var word in words.Skip(1))
 			{
 				sb.Append(ToUpperCamelCase(word));
 			}
