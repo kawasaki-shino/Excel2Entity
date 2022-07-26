@@ -151,7 +151,7 @@ namespace {namespc}
 			if (words.Length < 2) return "";
 
 			// 任意名称部分の先頭文字を大文字にして返却
-			return Columns.ToUpperCamelCase(words[1]);
+			return $"{Columns.ToUpperCamelCase(words[1])}Entity";
 		}
 
 		/// <summary>
