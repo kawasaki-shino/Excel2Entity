@@ -1,6 +1,5 @@
 ﻿using ClosedXML.Excel;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
@@ -86,7 +85,8 @@ namespace Excel2Entity
 		/// </summary>
 		/// <param name="folder"></param>
 		/// <param name="namespc"></param>
-		public void OutputCs(string folder, string namespc)
+		/// <param name="isInheritNotificationObject"></param>
+		public void OutputCs(string folder, string namespc, bool isInheritNotificationObject)
 		{
 			foreach (var file in Files)
 			{
@@ -96,19 +96,39 @@ namespace Excel2Entity
 					continue;
 				}
 
-				var contents = $@"using System;
+				var contents = $@"using System;{(isInheritNotificationObject ? "\r\nusing Wiseman.PJC.WPF.ObjectModel;" : "")}
 
 namespace {namespc}
 {{
-	public class {file.ClassName}
+	public class {file.ClassName}{(isInheritNotificationObject ? " : NotificationObject" : "")}
 	{{";
 
 				foreach (var item in file.ColumnsList)
 				{
-					contents += $@"
+					if (isInheritNotificationObject)
+					{
+						contents += $@"
+		private {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.PrivateVarName}{GetDefaultString(item.CsType, item.Default, true)}
+
 		/// <summary>{item.LogicalName}</summary>
-		public {item.CsType.GetAliasName()}{item.Nullable} {item.CamelCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default)}
+		public string {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName}
+		{{
+			get => {item.PrivateVarName};
+			set
+			{{
+				{item.PrivateVarName} = value;
+				RaisePropertyChanged();
+			}}
+		}}
 ";
+					}
+					else
+					{
+						contents += $@"
+		/// <summary>{item.LogicalName}</summary>
+		public {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default, false)}
+";
+					}
 				}
 
 				contents += @"	}
@@ -152,19 +172,45 @@ namespace {namespc}
 		/// </summary>
 		/// <param name="itemType"></param>
 		/// <param name="itemDefault"></param>
+		/// <param name="isInheritNotificationObject"></param>
 		/// <returns></returns>
-		private string GetDefaultString(Type itemType, string itemDefault)
+		private string GetDefaultString(Type itemType, string itemDefault, bool isInheritNotificationObject)
 		{
 			// 初期値指定なしなら抜ける
-			if (string.IsNullOrWhiteSpace(itemDefault)) return "";
+			if (string.IsNullOrWhiteSpace(itemDefault)) return isInheritNotificationObject
+				? ";"
+				: "";
 
 			// 文字列意外は初期値をそのまま出力
-			if (itemType != typeof(string)) return $" = {itemDefault.Replace("'", "")};";
+			if (itemType != typeof(string))
+			{
+				var value = itemDefault.Replace("'", "");
+				return string.IsNullOrEmpty(value)
+					? isInheritNotificationObject
+						? ";"
+						: ""
+					: $" = {value};";
+			}
 
 			// 文字列型かつ空が初期値
 			if (itemDefault == "''" || itemDefault == "'''") return @" = """";";
 			// それ以外はダブルクオーテーションで囲って出力
 			return $@" = ""{itemDefault.Replace("'", "")}"";";
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="required"></param>
+		/// <param name="csType"></param>
+		/// <returns></returns>
+		private string GetNullable(bool required, Type csType)
+		{
+			if (required) return "";
+
+			if (csType.GetAliasName() == typeof(decimal).GetAliasName()) return "?";
+
+			return "";
 		}
 	}
 }

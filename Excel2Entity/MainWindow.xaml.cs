@@ -95,8 +95,7 @@ namespace Excel2Entity
 			{
 				if (string.IsNullOrWhiteSpace(TbxFolder.Text)) return;
 
-				Converter.OutputCs(TbxFolder.Text, TbxNamespace.Text);
-
+				Converter.OutputCs(TbxFolder.Text, TbxNamespace.Text, Chk.IsChecked != null && Chk.IsChecked != false);
 
 				MessageBox.Show(this, "出力が完了しました", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 			};

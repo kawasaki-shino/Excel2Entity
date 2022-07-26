@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Excel2Entity" Height="800" Width="1000" WindowStartupLocation="CenterScreen" Icon="Resources/Icon.ico">
 
@@ -29,6 +30,8 @@
 			<RowDefinition Height="32" />
 			<RowDefinition Height="8" />
 			<RowDefinition Height="32" />
+			<RowDefinition Height="8" />
+			<RowDefinition Height="32" />
 			<RowDefinition Height="40" />
 		</Grid.RowDefinitions>
 
@@ -40,10 +43,10 @@
 
 		<DataGrid x:Name="DgClass" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" AutoGenerateColumns="False" CanUserAddRows="False" BorderThickness="1">
 			<DataGrid.Columns>
-				<DataGridCheckBoxColumn Binding="{Binding Target}" Header="対象" CanUserResize="False" />
+				<DataGridCheckBoxColumn Binding="{Binding Target}" Header="対象" CanUserResize="False" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
 				<DataGridTextColumn Binding="{Binding LogicalName}" Header="論理名" Width="400" IsReadOnly="True" />
 				<DataGridTextColumn Binding="{Binding PhysicsName}" Header="物理名" Width="300" IsReadOnly="True" />
-				<DataGridTextColumn Binding="{Binding ClassName}" Header="クラス名" Width="*" />
+				<DataGridTextColumn Binding="{Binding ClassName}" Header="クラス名" Width="*" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 			</DataGrid.Columns>
 		</DataGrid>
 
@@ -53,15 +56,10 @@
 			<DataGrid.Columns>
 				<DataGridTextColumn Binding="{Binding LogicalName}" Header="論理名" Width="*" IsReadOnly="True" />
 				<DataGridTextColumn Binding="{Binding PhysicsName}" Header="物理名" Width="*" IsReadOnly="True" />
-				<DataGridTextColumn Binding="{Binding CamelCasePhysicsName}" Header="プロパティ名" Width="*" IsReadOnly="False" />
-				<DataGridTemplateColumn Header="型" Width="150" IsReadOnly="False">
-					<DataGridTemplateColumn.CellTemplate>
-						<DataTemplate>
-							<ComboBox x:Name="CmbType" ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.CsTypes, Mode=TwoWay}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding CsType, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" />
-						</DataTemplate>
-					</DataGridTemplateColumn.CellTemplate>
-				</DataGridTemplateColumn>
-				<DataGridTextColumn Binding="{Binding Default}" Header="初期値" Width="100" IsReadOnly="False" />
+				<DataGridTextColumn Binding="{Binding CamelCasePhysicsName}" Header="プロパティ名" Width="*" IsReadOnly="False" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+				<materialDesign:DataGridComboBoxColumn Header="型" Width="150" IsReadOnly="False" ItemsSourceBinding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.CsTypes, Mode=TwoWay}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValueBinding="{Binding CsType, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" />
+				<DataGridCheckBoxColumn Binding="{Binding Required}" Header="必須" CanUserResize="False" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
+				<DataGridTextColumn Binding="{Binding Default}" Header="初期値" Width="100" IsReadOnly="False" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 			</DataGrid.Columns>
 		</DataGrid>
 
@@ -72,7 +70,9 @@
 		<Label Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">namespace</Label>
 		<TextBox x:Name="TbxNamespace" Grid.Row="9" Grid.Column="1" VerticalContentAlignment="Center" />
 
-		<Button x:Name="BtnOutput" Grid.Row="10" Grid.Column="1" Width="100" Height="30" VerticalAlignment="Bottom">
+		<CheckBox x:Name="Chk" Grid.Row="11" Grid.Column="1">NotificationObject を継承する</CheckBox>
+
+		<Button x:Name="BtnOutput" Grid.Row="12" Grid.Column="1" Width="100" Height="30" VerticalAlignment="Bottom">
 			<StackPanel Orientation="Horizontal">
 				<fa:ImageAwesome Icon="Download" Width="20" Height="20" Foreground="White" />
 				<Label Content="出力" FontSize="12" Foreground="White" Margin="8,0,0,0" />

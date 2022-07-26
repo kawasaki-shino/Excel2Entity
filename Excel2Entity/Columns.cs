@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 
 namespace Excel2Entity
@@ -17,11 +18,15 @@ namespace Excel2Entity
 			{
 				_physicsName = value;
 				CamelCasePhysicsName = GeneratePropertyName(_physicsName);
+				PrivateVarName = GeneratePrivateVarName(_physicsName);
 			}
 		}
 
 		/// <summary>物理名(キャメルケース)</summary>
 		public string CamelCasePhysicsName { get; set; }
+
+		/// <summary>private 変数名</summary>
+		public string PrivateVarName { get; set; }
 
 		private string _type;
 		/// <summary>型</summary>
@@ -77,7 +82,27 @@ namespace Excel2Entity
 
 			// パース
 			var words = physicsName.Split('_');
-			foreach (var word in words)
+			Array.ForEach(words, x => sb.Append(ToUpperCamelCase(x)));
+
+			return sb.ToString();
+		}
+
+		/// <summary>
+		/// private 変数名
+		/// </summary>
+		/// <param name="physicsName"></param>
+		/// <returns></returns>
+		private string GeneratePrivateVarName(string physicsName)
+		{
+			var sb = new StringBuilder();
+			sb.Append('_');
+
+			// パース
+			var words = physicsName.Split('_');
+
+			sb.Append(words.First().ToLower());
+
+			foreach (var word in words.Skip(1))
 			{
 				sb.Append(ToUpperCamelCase(word));
 			}
