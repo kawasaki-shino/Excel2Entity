@@ -111,7 +111,7 @@ namespace {namespc}
 		private {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.PrivateVarName}{GetDefaultString(item.CsType, item.Default, true)}
 
 		/// <summary>{item.LogicalName}</summary>
-		public string {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName}
+		public {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName}
 		{{
 			get => {item.PrivateVarName};
 			set
