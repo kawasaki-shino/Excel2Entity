@@ -88,6 +88,8 @@ namespace Excel2Entity
 		/// <param name="isInheritNotificationObject"></param>
 		public void OutputCs(string folder, string namespc, bool isInheritNotificationObject)
 		{
+			folder = GetOutputFolder(folder);
+
 			foreach (var file in Files)
 			{
 				// 対象外なら次のシート
@@ -111,7 +113,7 @@ namespace {namespc}
 		private {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.PrivateVarName}{GetDefaultString(item.CsType, item.Default, true)}
 
 		/// <summary>{item.LogicalName}</summary>
-		public string {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName}
+		public {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName}
 		{{
 			get => {item.PrivateVarName};
 			set
@@ -211,6 +213,27 @@ namespace {namespc}
 			if (csType.GetAliasName() == typeof(decimal).GetAliasName()) return "?";
 
 			return "";
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="folder"></param>
+		/// <returns></returns>
+		private string GetOutputFolder(string folder)
+		{
+			// 拡張子なしのファイル名を取得
+			var name = Path.GetFileNameWithoutExtension(FileInfo);
+			var path = folder.Contains(name)
+				? folder
+				: Path.Combine(folder, name);
+
+			if (!Directory.Exists(path))
+			{
+				Directory.CreateDirectory(path);
+			}
+
+			return path;
 		}
 	}
 }
