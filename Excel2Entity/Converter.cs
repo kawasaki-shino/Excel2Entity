@@ -86,7 +86,8 @@ namespace Excel2Entity
 		/// <param name="folder"></param>
 		/// <param name="namespc"></param>
 		/// <param name="isInheritNotificationObject"></param>
-		public void OutputCs(string folder, string namespc, bool isInheritNotificationObject)
+		/// <param name="needUndo"></param>
+		public void OutputCs(string folder, string namespc, bool isInheritNotificationObject, bool needUndo)
 		{
 			folder = GetOutputFolder(folder);
 
@@ -118,7 +119,7 @@ namespace {namespc}
 			get => {item.PrivateVarName};
 			set
 			{{
-				{item.PrivateVarName} = value;
+				{(needUndo ? $"SetUndo(ref {item.PrivateVarName}, value, this);" : $"{item.PrivateVarName} = value;")}
 				RaisePropertyChanged();
 			}}
 		}}

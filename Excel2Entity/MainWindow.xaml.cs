@@ -95,7 +95,7 @@ namespace Excel2Entity
 			{
 				if (string.IsNullOrWhiteSpace(TbxFolder.Text)) return;
 
-				Converter.OutputCs(TbxFolder.Text, TbxNamespace.Text, Chk.IsChecked != null && Chk.IsChecked != false);
+				Converter.OutputCs(TbxFolder.Text, TbxNamespace.Text, Chk.IsChecked ?? false, ChkUndo.IsChecked ?? false);
 
 				MessageBox.Show(this, "出力が完了しました", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 			};
@@ -109,6 +109,11 @@ namespace Excel2Entity
 				if (item?.ColumnsList != null) DgColumn.ItemsSource = item.ColumnsList;
 
 				SetScrollTop(DgColumn);
+			};
+
+			Chk.Unchecked += (s, e) =>
+			{
+				if (!(Chk.IsChecked ?? false)) ChkUndo.IsChecked = false;
 			};
 		}
 
