@@ -108,6 +108,7 @@
     <Compile Include="Columns.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="CsTypes.cs" />
+    <Compile Include="EntityBase.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Sheets.cs" />
     <Compile Include="MainWindow.xaml.cs">
