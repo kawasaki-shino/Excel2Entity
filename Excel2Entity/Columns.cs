@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Excel2Entity
 {
-	public class Columns
+	public class Columns : EntityBase
 	{
 		/// <summary>論理名</summary>
 		public string LogicalName { get; set; }
@@ -62,7 +62,30 @@ namespace Excel2Entity
 		public Type CsType { get; set; }
 
 		/// <summary>必須</summary>
-		public bool Required { get; set; }
+		private bool _required;
+
+		public bool Required
+		{
+			get => _required;
+			set
+			{
+				_required = value;
+				OnPropertyChanged();
+			}
+		}
+
+		/// <summary>Undo要否</summary>
+		private bool _needUndo = true;
+
+		public bool NeedUndo
+		{
+			get => _needUndo;
+			set
+			{
+				_needUndo = value;
+				OnPropertyChanged();
+			}
+		}
 
 		public string Nullable => !Required && Type == "NUMBER"
 			? "?"

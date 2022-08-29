@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 namespace Excel2Entity
@@ -95,7 +96,7 @@ namespace Excel2Entity
 			{
 				if (string.IsNullOrWhiteSpace(TbxFolder.Text)) return;
 
-				Converter.OutputCs(TbxFolder.Text, TbxNamespace.Text, Chk.IsChecked != null && Chk.IsChecked != false);
+				Converter.OutputCs(TbxFolder.Text, TbxNamespace.Text, Chk.IsChecked ?? false);
 
 				MessageBox.Show(this, "出力が完了しました", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 			};
@@ -152,6 +153,43 @@ namespace Excel2Entity
 			var border = VisualTreeHelper.GetChild(dg, 0) as Decorator;
 			var scrollViewer = border?.Child as ScrollViewer;
 			scrollViewer?.ScrollToTop();
+		}
+
+		/// <summary>
+		/// 必須と Undo の全選択管理用フィールド
+		/// </summary>
+		private bool _currentIsRequiredChecked;
+		private bool _currentIsNeedUndoChecked = true;
+
+		/// <summary>
+		/// ヘッダークリック時の全選択/全解除
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void columnHeader_Click(object sender, RoutedEventArgs e)
+		{
+			var header = sender as DataGridColumnHeader;
+			if (header == null) return;
+
+			if (header.Content.ToString() == "必須")
+			{
+				foreach (Columns entity in DgColumn.ItemsSource)
+				{
+					entity.Required = !_currentIsRequiredChecked;
+				}
+
+				_currentIsRequiredChecked = !_currentIsRequiredChecked;
+			}
+
+			if (header.Content.ToString() == "Undo")
+			{
+				foreach (Columns entity in DgColumn.ItemsSource)
+				{
+					entity.NeedUndo = !_currentIsNeedUndoChecked;
+				}
+
+				_currentIsNeedUndoChecked = !_currentIsNeedUndoChecked;
+			}
 		}
 	}
 }
