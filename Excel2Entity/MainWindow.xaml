@@ -53,12 +53,18 @@
 		<Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,8,0,0">詳細</Label>
 
 		<DataGrid x:Name="DgColumn" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" AutoGenerateColumns="False" CanUserAddRows="False" BorderThickness="1">
+			<DataGrid.ColumnHeaderStyle>
+				<Style TargetType="DataGridColumnHeader">
+					<EventSetter Event="Click" Handler="columnHeader_Click"/>
+				</Style>
+			</DataGrid.ColumnHeaderStyle>
 			<DataGrid.Columns>
 				<DataGridTextColumn Binding="{Binding LogicalName}" Header="論理名" Width="*" IsReadOnly="True" />
 				<DataGridTextColumn Binding="{Binding PhysicsName}" Header="物理名" Width="*" IsReadOnly="True" />
 				<DataGridTextColumn Binding="{Binding CamelCasePhysicsName}" Header="プロパティ名" Width="*" IsReadOnly="False" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 				<materialDesign:DataGridComboBoxColumn Header="型" Width="150" IsReadOnly="False" ItemsSourceBinding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.CsTypes, Mode=TwoWay}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValueBinding="{Binding CsType, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" />
-				<DataGridCheckBoxColumn Binding="{Binding Required}" Header="必須" CanUserResize="False" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
+				<DataGridCheckBoxColumn CanUserSort="False" Binding="{Binding Required, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Header="必須" CanUserResize="False" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
+				<DataGridCheckBoxColumn CanUserSort="False" Binding="{Binding NeedUndo, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Header="Undo" CanUserResize="False" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
 				<DataGridTextColumn Binding="{Binding Default}" Header="初期値" Width="100" IsReadOnly="False" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 			</DataGrid.Columns>
 		</DataGrid>
@@ -70,10 +76,7 @@
 		<Label Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">namespace</Label>
 		<TextBox x:Name="TbxNamespace" Grid.Row="9" Grid.Column="1" VerticalContentAlignment="Center" />
 
-		<StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
-			<CheckBox x:Name="Chk" Margin="0 0 16 0">NotificationObject を継承する</CheckBox>
-			<CheckBox x:Name="ChkUndo" IsEnabled="{Binding IsChecked, ElementName=Chk}">Undo 対応する</CheckBox>
-		</StackPanel>
+		<CheckBox Grid.Row="11" Grid.Column="1" x:Name="Chk" Margin="0 0 16 0">NotificationObject を継承する</CheckBox>
 
 		<Button x:Name="BtnOutput" Grid.Row="12" Grid.Column="1" Width="100" Height="30" VerticalAlignment="Bottom">
 			<StackPanel Orientation="Horizontal">
