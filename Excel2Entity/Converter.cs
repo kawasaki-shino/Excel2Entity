@@ -118,7 +118,7 @@ namespace {namespc}
 			get => {item.PrivateVarName};
 			set
 			{{
-				{item.PrivateVarName} = value;
+				{(item.NeedUndo ? $"SetUndo(ref {item.PrivateVarName}, value, this);" : $"{item.PrivateVarName} = value;")}
 				RaisePropertyChanged();
 			}}
 		}}
