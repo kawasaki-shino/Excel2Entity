@@ -113,10 +113,10 @@ namespace {namespc}
                     if (isInheritNotificationObject)
                     {
                         contents += $@"
-		private {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.PrivateVarName}{GetDefaultString(item.CsType, item.Default, true)}
+		private {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.PrivateVarName}{GetDefaultString(item.CsType, item.Default, true)}
 
 		/// <summary>{item.LogicalName}</summary>
-		public {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName}
+		public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName}
 		{{
 			get => {item.PrivateVarName};
 			set
@@ -134,14 +134,14 @@ namespace {namespc}
                         contents += $@"
 		/// <summary>{item.LogicalName}</summary>
         {GetColumnAttribute(item)}
-        public {(item.CsType == typeof(char) ? "string" : item.CsType.GetAliasName())}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}
+        public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}
 ";
                     }
                     else
                     {
                         contents += $@"
 		/// <summary>{item.LogicalName}</summary>
-		public {item.CsType.GetAliasName()}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default, false)}
+		public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default, false)}
 ";
                     }
                 }
@@ -197,7 +197,7 @@ namespace {namespc}
                 : "";
 
             // 文字列意外は初期値をそのまま出力
-            if (itemType != typeof(string))
+            if (itemType != typeof(string) && itemType != typeof(char))
             {
                 var value = itemDefault.Replace("'", "");
                 return string.IsNullOrEmpty(value)
@@ -208,7 +208,7 @@ namespace {namespc}
             }
 
             // 文字列型かつ空が初期値
-            if (itemDefault == "''" || itemDefault == "'''") return @" = """";";
+            if (itemDefault == "''" || itemDefault == "'''" || itemDefault == "'’’" || itemDefault == "’’") return @" = """";";
             // それ以外はダブルクオーテーションで囲って出力
             return $@" = ""{itemDefault.Replace("'", "")}"";";
         }
@@ -287,5 +287,12 @@ namespace {namespc}
 
             return $@"[Column(DbType.{dbType}, name: ""{item.PhysicsName}""{size})]";
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        private string GetTypeString(Type type) => type == typeof(char) ? "string" : type.GetAliasName();
     }
 }
