@@ -20,6 +20,8 @@ namespace Excel2Entity
         public ObservableCollection<CsTypes> CsTypes { get; set; } = new ObservableCollection<CsTypes>()
         {
             new CsTypes(name: typeof(string).GetAliasName(), value: typeof(string)),
+            new CsTypes(name: typeof(int).GetAliasName(), value: typeof(int)),
+            new CsTypes(name: typeof(long).GetAliasName(), value: typeof(long)),
             new CsTypes(name: typeof(decimal).GetAliasName(), value: typeof(decimal)),
             new CsTypes(name: typeof(DateTime).GetAliasName(), value: typeof(DateTime)),
             new CsTypes(name: typeof(object).GetAliasName(), value: typeof(object)),
@@ -96,7 +98,7 @@ namespace Excel2Entity
             {
                 if (string.IsNullOrWhiteSpace(TbxFolder.Text)) return;
 
-                Converter.OutputCs(TbxFolder.Text, TbxNamespace.Text, Chk.IsChecked ?? false);
+                Converter.OutputCs(TbxFolder.Text, TbxNamespace.Text, Chk.IsChecked ?? false, Chk2.IsChecked ?? false);
 
                 MessageBox.Show(this, "出力が完了しました", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             };

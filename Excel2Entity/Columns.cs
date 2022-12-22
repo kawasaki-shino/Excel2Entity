@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using static System.Int32;
 
 namespace Excel2Entity
 {
@@ -43,13 +44,13 @@ namespace Excel2Entity
                         CsType = typeof(string);
                         break;
                     case "CHAR":
-                        CsType = typeof(string);
+                        CsType = typeof(char);
                         break;
                     case "DATE":
                         CsType = typeof(DateTime);
                         break;
                     case "NUMBER":
-                        CsType = typeof(decimal);
+                        CsType = SetNumberType();
                         break;
                     default:
                         CsType = typeof(object);
@@ -57,6 +58,22 @@ namespace Excel2Entity
                 }
             }
         }
+
+        /// <summary>サイズ</summary>
+        public string Size
+        {
+            get => _size;
+            set
+            {
+                _size = value;
+                CsType = SetNumberType();
+            }
+        }
+
+        private string _size;
+
+        /// <summary>サイズ(C#)</summary>
+        public int? CsSize { get; set; }
 
         /// <summary>型(C#)</summary>
         public Type CsType { get; set; }
@@ -151,6 +168,33 @@ namespace Excel2Entity
             sb.Append(array);
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// NUMBER 型の場合に C# の型を何にするかの判定
+        /// </summary>
+        /// <returns></returns>
+        private Type SetNumberType()
+        {
+            if (Size == null) return typeof(int);
+
+            var arrSize = Size.Split(',');
+            if (TryParse(arrSize[0], out int size))
+            {
+                CsSize = size;
+            }
+
+            if (Type != "NUMBER") return CsType;
+
+            if (2 <= arrSize.Length)
+            {
+                // 小数部の桁指定有り
+                return typeof(decimal);
+            }
+
+            return 10 <= CsSize
+                ? typeof(long)
+                : typeof(int);
         }
     }
 }

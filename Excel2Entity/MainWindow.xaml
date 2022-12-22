@@ -167,10 +167,18 @@
                  Grid.Column="1"
                  VerticalContentAlignment="Center" />
 
-        <CheckBox Grid.Row="11"
-                  Grid.Column="1"
-                  x:Name="Chk"
-                  Margin="0 0 16 0">NotificationObject を継承する</CheckBox>
+        <StackPanel Grid.Row="11"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
+            <CheckBox x:Name="Chk"
+                      Margin="0 0 24 0"
+                      Content="NotificationObject を継承する" />
+            <CheckBox x:Name="Chk2"
+                      Margin="0 0 24 0"
+                      IsChecked="True"
+                      Content="StandardColumns を継承する" />
+            <Label VerticalAlignment="Center" Content="※チェックオンにする場合はどちらか一報で" />
+        </StackPanel>
 
         <Button x:Name="BtnOutput"
                 Grid.Row="12"

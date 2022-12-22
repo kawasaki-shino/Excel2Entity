@@ -31,6 +31,7 @@ namespace Excel2Entity
                 case "System.Int16": return "short";
                 case "System.UInt16": return "ushort";
                 case "System.String": return "string";
+                case "System.DateTime": return "DateTime";
                 case "System.Void": return "void";
             }
 

@@ -52,6 +52,7 @@ namespace Excel2Entity
                         var b = CustomTrim(sheet.Cell($"B{i}").Value.ToString());
                         var c = CustomTrim(sheet.Cell($"C{i}").Value.ToString());
                         var d = CustomTrim(sheet.Cell($"D{i}").Value.ToString());
+                        var e = CustomTrim(sheet.Cell($"E{i}").Value.ToString());
                         var g = CustomTrim(sheet.Cell($"G{i}").Value.ToString());
                         var j = CustomTrim(sheet.Cell($"J{i}").Value.ToString());
 
@@ -63,6 +64,7 @@ namespace Excel2Entity
                             LogicalName = b,
                             PhysicsName = c,
                             Type = d,
+                            Size = e,
                             Default = g,
                             Required = j == "○"
                         });
@@ -86,7 +88,8 @@ namespace Excel2Entity
         /// <param name="folder"></param>
         /// <param name="namespc"></param>
         /// <param name="isInheritNotificationObject"></param>
-        public void OutputCs(string folder, string namespc, bool isInheritNotificationObject)
+        /// <param name="isStandardColumns"></param>
+        public void OutputCs(string folder, string namespc, bool isInheritNotificationObject, bool isStandardColumns)
         {
             folder = GetOutputFolder(folder);
 
@@ -98,11 +101,11 @@ namespace Excel2Entity
                     continue;
                 }
 
-                var contents = $@"using System;{(isInheritNotificationObject ? "\r\nusing Wiseman.PJC.WPF.ObjectModel;" : "")}
+                var contents = $@"using System;{(isInheritNotificationObject ? "\r\nusing Wiseman.PJC.WPF.ObjectModel;" : isStandardColumns ? "\r\nusing Wiseman.PJC.Gen2.RDB.Core;" : "")}
 
 namespace {namespc}
 {{
-	public class {file.ClassName}{(isInheritNotificationObject ? " : NotificationObject" : "")}
+	public class {file.ClassName}{(isInheritNotificationObject ? " : NotificationObject" : isStandardColumns ? " : StandardColumns" : "")}
 	{{";
 
                 foreach (var item in file.ColumnsList)
@@ -122,6 +125,16 @@ namespace {namespc}
 				RaisePropertyChanged();
 			}}
 		}}
+";
+                    }
+                    else if (isStandardColumns)
+                    {
+                        if (item.CamelCasePhysicsName == "Id") continue;
+
+                        contents += $@"
+		/// <summary>{item.LogicalName}</summary>
+        {GetColumnAttribute(item)}
+        public {(item.CsType == typeof(char) ? "string" : item.CsType.GetAliasName())}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}
 ";
                     }
                     else
@@ -210,7 +223,8 @@ namespace {namespc}
         {
             if (required) return "";
 
-            if (csType.GetAliasName() == typeof(decimal).GetAliasName()) return "?";
+            // CHAR もしくは VARCHAR2 は string のため ? はつけない
+            if (csType != typeof(char) && csType != typeof(string)) return "?";
 
             return "";
         }
@@ -234,6 +248,44 @@ namespace {namespc}
             }
 
             return path;
+        }
+
+        /// <summary>
+        /// ColumnAttribute 文字列生成
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        private string GetColumnAttribute(Columns item)
+        {
+            string dbType = "";
+
+            switch (item.CsType.FullName)
+            {
+                case "System.String":
+                    dbType = "Varchar2";
+                    break;
+                case "System.Char":
+                    dbType = "Char";
+                    break;
+                case "System.DateTime":
+                    dbType = "Date";
+                    break;
+                case "System.Int32":
+                    dbType = "Int32";
+                    break;
+                case "System.Int64":
+                    dbType = "Int64";
+                    break;
+                case "System.Decimal":
+                    dbType = "Decimal";
+                    break;
+            }
+
+            var size = item.CsSize == null
+                ? ""
+                : $", size: {item.CsSize}";
+
+            return $@"[Column(DbType.{dbType}, name: ""{item.PhysicsName}""{size})]";
         }
     }
 }
