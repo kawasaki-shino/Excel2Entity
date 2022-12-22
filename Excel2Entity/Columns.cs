@@ -1,156 +1,200 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using static System.Int32;
 
 namespace Excel2Entity
 {
-	public class Columns : EntityBase
-	{
-		/// <summary>論理名</summary>
-		public string LogicalName { get; set; }
+    public class Columns : EntityBase
+    {
+        /// <summary>論理名</summary>
+        public string LogicalName { get; set; }
 
-		private string _physicsName;
-		/// <summary>物理名</summary>
-		public string PhysicsName
-		{
-			get => _physicsName;
-			set
-			{
-				_physicsName = value;
-				CamelCasePhysicsName = GeneratePropertyName(_physicsName);
-				PrivateVarName = GeneratePrivateVarName(_physicsName);
-			}
-		}
+        private string _physicsName;
+        /// <summary>物理名</summary>
+        public string PhysicsName
+        {
+            get => _physicsName;
+            set
+            {
+                _physicsName = value;
+                CamelCasePhysicsName = GeneratePropertyName(_physicsName);
+                PrivateVarName = GeneratePrivateVarName(_physicsName);
+            }
+        }
 
-		/// <summary>物理名(キャメルケース)</summary>
-		public string CamelCasePhysicsName { get; set; }
+        /// <summary>物理名(キャメルケース)</summary>
+        public string CamelCasePhysicsName { get; set; }
 
-		/// <summary>private 変数名</summary>
-		public string PrivateVarName { get; set; }
+        /// <summary>private 変数名</summary>
+        public string PrivateVarName { get; set; }
 
-		private string _type;
-		/// <summary>型</summary>
-		public string Type
-		{
-			get => _type;
-			set
-			{
-				_type = value;
+        private string _type;
+        /// <summary>型</summary>
+        public string Type
+        {
+            get => _type;
+            set
+            {
+                _type = value;
 
-				switch (_type)
-				{
-					case "VARCHAR2":
-						CsType = typeof(string);
-						break;
-					case "CHAR":
-						CsType = typeof(string);
-						break;
-					case "DATE":
-						CsType = typeof(DateTime);
-						break;
-					case "NUMBER":
-						CsType = typeof(decimal);
-						break;
-					default:
-						CsType = typeof(object);
-						break;
-				}
-			}
-		}
+                switch (_type)
+                {
+                    case "VARCHAR2":
+                        CsType = typeof(string);
+                        break;
+                    case "CHAR":
+                        CsType = typeof(char);
+                        break;
+                    case "DATE":
+                        CsType = typeof(DateTime);
+                        break;
+                    case "NUMBER":
+                        CsType = SetNumberType();
+                        break;
+                    default:
+                        CsType = typeof(object);
+                        break;
+                }
+            }
+        }
 
-		/// <summary>型(C#)</summary>
-		public Type CsType { get; set; }
+        /// <summary>サイズ</summary>
+        public string Size
+        {
+            get => _size;
+            set
+            {
+                _size = value;
+                CsType = SetNumberType();
+            }
+        }
 
-		/// <summary>必須</summary>
-		private bool _required;
+        private string _size;
 
-		public bool Required
-		{
-			get => _required;
-			set
-			{
-				_required = value;
-				OnPropertyChanged();
-			}
-		}
+        /// <summary>サイズ(C#)</summary>
+        public int? CsSize { get; set; }
 
-		/// <summary>Undo要否</summary>
-		private bool _needUndo = true;
+        /// <summary>型(C#)</summary>
+        public Type CsType { get; set; }
 
-		public bool NeedUndo
-		{
-			get => _needUndo;
-			set
-			{
-				_needUndo = value;
-				OnPropertyChanged();
-			}
-		}
+        /// <summary>必須</summary>
+        private bool _required;
 
-		public string Nullable => !Required && Type == "NUMBER"
-			? "?"
-			: "";
+        public bool Required
+        {
+            get => _required;
+            set
+            {
+                _required = value;
+                OnPropertyChanged();
+            }
+        }
 
-		/// <summary>初期値</summary>
-		public string Default { get; set; }
+        /// <summary>Undo要否</summary>
+        private bool _needUndo = true;
 
-		/// <summary>
-		/// プロパティ名生成
-		/// </summary>
-		/// <param name="physicsName"></param>
-		/// <returns></returns>
-		private string GeneratePropertyName(string physicsName)
-		{
-			var sb = new StringBuilder();
+        public bool NeedUndo
+        {
+            get => _needUndo;
+            set
+            {
+                _needUndo = value;
+                OnPropertyChanged();
+            }
+        }
 
-			// パース
-			var words = physicsName.Split('_');
-			Array.ForEach(words, x => sb.Append(ToUpperCamelCase(x)));
+        public string Nullable => !Required && Type == "NUMBER"
+            ? "?"
+            : "";
 
-			return sb.ToString();
-		}
+        /// <summary>初期値</summary>
+        public string Default { get; set; }
 
-		/// <summary>
-		/// private 変数名
-		/// </summary>
-		/// <param name="physicsName"></param>
-		/// <returns></returns>
-		private string GeneratePrivateVarName(string physicsName)
-		{
-			var sb = new StringBuilder();
-			sb.Append('_');
+        /// <summary>
+        /// プロパティ名生成
+        /// </summary>
+        /// <param name="physicsName"></param>
+        /// <returns></returns>
+        private string GeneratePropertyName(string physicsName)
+        {
+            var sb = new StringBuilder();
 
-			// パース
-			var words = physicsName.Split('_');
+            // パース
+            var words = physicsName.Split('_');
+            Array.ForEach(words, x => sb.Append(ToUpperCamelCase(x)));
 
-			sb.Append(words.First().ToLower());
+            return sb.ToString();
+        }
 
-			foreach (var word in words.Skip(1))
-			{
-				sb.Append(ToUpperCamelCase(word));
-			}
+        /// <summary>
+        /// private 変数名
+        /// </summary>
+        /// <param name="physicsName"></param>
+        /// <returns></returns>
+        private string GeneratePrivateVarName(string physicsName)
+        {
+            var sb = new StringBuilder();
+            sb.Append('_');
 
-			return sb.ToString();
-		}
+            // パース
+            var words = physicsName.Split('_');
 
-		/// <summary>
-		/// キャメルケース変換
-		/// </summary>
-		/// <param name="s"></param>
-		/// <returns></returns>
-		public static string ToUpperCamelCase(string s)
-		{
-			// 小文字に変換
-			s = s.ToLower();
+            sb.Append(words.First().ToLower());
 
-			var sb = new StringBuilder();
-			var array = s.ToCharArray();
+            foreach (var word in words.Skip(1))
+            {
+                sb.Append(ToUpperCamelCase(word));
+            }
 
-			// 先頭文字を大文字にする
-			array[0] = char.ToUpper(array[0]);
-			sb.Append(array);
+            return sb.ToString();
+        }
 
-			return sb.ToString();
-		}
-	}
+        /// <summary>
+        /// キャメルケース変換
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string ToUpperCamelCase(string s)
+        {
+            // 小文字に変換
+            s = s.ToLower();
+
+            var sb = new StringBuilder();
+            var array = s.ToCharArray();
+
+            // 先頭文字を大文字にする
+            array[0] = char.ToUpper(array[0]);
+            sb.Append(array);
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// NUMBER 型の場合に C# の型を何にするかの判定
+        /// </summary>
+        /// <returns></returns>
+        private Type SetNumberType()
+        {
+            if (Size == null) return typeof(int);
+
+            var arrSize = Size.Split(',');
+            if (TryParse(arrSize[0], out int size))
+            {
+                CsSize = size;
+            }
+
+            if (Type != "NUMBER") return CsType;
+
+            if (2 <= arrSize.Length)
+            {
+                // 小数部の桁指定有り
+                return typeof(decimal);
+            }
+
+            return 10 <= CsSize
+                ? typeof(long)
+                : typeof(int);
+        }
+    }
 }
