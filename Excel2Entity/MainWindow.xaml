@@ -177,7 +177,7 @@
                       Margin="0 0 24 0"
                       IsChecked="True"
                       Content="StandardColumns を継承する" />
-            <Label VerticalAlignment="Center" Content="※チェックオンにする場合はどちらか一報で" />
+            <Label VerticalAlignment="Center" Content="※どちらか一方しかチェックオンになりません" />
         </StackPanel>
 
         <Button x:Name="BtnOutput"

@@ -93,6 +93,16 @@ namespace Excel2Entity
                 }
             };
 
+            Chk.Checked += (s, e) =>
+            {
+                Chk2.IsChecked = !(Chk.IsChecked ?? false);
+            };
+
+            Chk2.Checked += (s, e) =>
+            {
+                Chk.IsChecked = !(Chk2.IsChecked ?? false);
+            };
+
             // 出力ボタンクリック
             BtnOutput.Click += (s, e) =>
             {
