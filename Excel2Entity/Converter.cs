@@ -129,7 +129,12 @@ namespace {namespc}
                     }
                     else if (isStandardColumns)
                     {
-                        if (item.CamelCasePhysicsName == "Id") continue;
+                        if (string.Equals(item.CamelCasePhysicsName, "Id", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.CamelCasePhysicsName, "LockVersion", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.CamelCasePhysicsName, "Update_AccountId", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.CamelCasePhysicsName, "Update_LoginId", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.CamelCasePhysicsName, "Update_FacilityId", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.CamelCasePhysicsName, "Update_Timestamp", StringComparison.OrdinalIgnoreCase)) continue;
 
                         contents += $@"
 		/// <summary>{item.LogicalName}</summary>
