@@ -183,6 +183,7 @@ namespace {namespc}
         {
             // 空白を抜く
             value = value.Trim().Trim('\u200B');
+            value = value.Replace("\u200B", "");
             // 制御文字を抜く
             return new string(value.Where(c => !char.IsControl(c)).ToArray());
         }
