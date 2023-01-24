@@ -19,13 +19,17 @@ namespace Excel2Entity
             set
             {
                 _physicsName = value;
-                CamelCasePhysicsName = GeneratePropertyName(_physicsName);
+                SnakeCasePhysicsName = GeneratePropertyName(_physicsName);
+                CamelCasePhysicsName = SnakeCasePhysicsName.Replace("_", ""); ;
                 PrivateVarName = GeneratePrivateVarName(_physicsName);
             }
         }
 
         /// <summary>物理名(キャメルケース)</summary>
         public string CamelCasePhysicsName { get; set; }
+
+        /// <summary>物理名(スネークケース)</summary>
+        public string SnakeCasePhysicsName { get; set; }
 
         /// <summary>private 変数名</summary>
         public string PrivateVarName { get; set; }

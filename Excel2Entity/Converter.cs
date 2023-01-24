@@ -129,24 +129,24 @@ namespace {namespc}
                     }
                     else if (isStandardColumns)
                     {
-                        if (string.Equals(item.CamelCasePhysicsName, "Id", StringComparison.OrdinalIgnoreCase)
-                            || string.Equals(item.CamelCasePhysicsName, "LockVersion", StringComparison.OrdinalIgnoreCase)
-                            || string.Equals(item.CamelCasePhysicsName, "Update_AccountId", StringComparison.OrdinalIgnoreCase)
-                            || string.Equals(item.CamelCasePhysicsName, "Update_LoginId", StringComparison.OrdinalIgnoreCase)
-                            || string.Equals(item.CamelCasePhysicsName, "Update_FacilityId", StringComparison.OrdinalIgnoreCase)
-                            || string.Equals(item.CamelCasePhysicsName, "Update_Timestamp", StringComparison.OrdinalIgnoreCase)) continue;
+                        if (string.Equals(item.SnakeCasePhysicsName, "Id", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.SnakeCasePhysicsName, "LockVersion", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.SnakeCasePhysicsName, "Update_AccountId", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.SnakeCasePhysicsName, "Update_LoginId", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.SnakeCasePhysicsName, "Update_FacilityId", StringComparison.OrdinalIgnoreCase)
+                            || string.Equals(item.SnakeCasePhysicsName, "Update_Timestamp", StringComparison.OrdinalIgnoreCase)) continue;
 
                         contents += $@"
 		/// <summary>{item.LogicalName}</summary>
         {GetColumnAttribute(item)}
-        public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}
+        public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.SnakeCasePhysicsName} {{ get; set; }}
 ";
                     }
                     else
                     {
                         contents += $@"
 		/// <summary>{item.LogicalName}</summary>
-		public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default, false)}
+		public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.SnakeCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default, false)}
 ";
                     }
                 }
