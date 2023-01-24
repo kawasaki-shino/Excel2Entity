@@ -146,7 +146,7 @@ namespace {namespc}
                     {
                         contents += $@"
 		/// <summary>{item.LogicalName}</summary>
-		public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.SnakeCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default, false)}
+		public {GetTypeString(item.CsType)}{GetNullable(item.Required, item.CsType)} {item.CamelCasePhysicsName} {{ get; set; }}{GetDefaultString(item.CsType, item.Default, false)}
 ";
                     }
                 }
