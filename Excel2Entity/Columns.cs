@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using static System.Int32;
@@ -118,13 +119,13 @@ namespace Excel2Entity
         /// <returns></returns>
         private string GeneratePropertyName(string physicsName)
         {
-            var sb = new StringBuilder();
-
             // パース
-            var words = physicsName.Split('_');
-            Array.ForEach(words, x => sb.Append(ToUpperCamelCase(x)));
+            var words = physicsName.Split('_').ToList();
+            var convertList = new List<string>();
 
-            return sb.ToString();
+            words.ForEach(n => convertList.Add(ToUpperCamelCase(n)));
+
+            return string.Join("_", convertList);
         }
 
         /// <summary>
