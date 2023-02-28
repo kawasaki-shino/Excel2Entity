@@ -191,7 +191,8 @@ namespace Excel2Entity
 
             if (Type != "NUMBER") return CsType;
 
-            if (2 <= arrSize.Length)
+            // テーブル定義書で (9,0) 等の小数部に 0 を指定された場合を考慮
+            if (2 <= arrSize.Length && arrSize[1] != "0")
             {
                 // 小数部の桁指定有り
                 return typeof(decimal);
