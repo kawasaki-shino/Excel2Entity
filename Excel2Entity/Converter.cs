@@ -154,6 +154,33 @@ namespace {namespc}
                 contents += @"	}
 }
 ";
+                if (!isInheritNotificationObject)
+                {
+                    contents += @"
+// RDB → Content 用
+{
+";
+
+                    foreach (var item in file.ColumnsList)
+                    {
+                        contents += $@"    {item.CamelCasePhysicsName} = xxx.{item.SnakeCasePhysicsName},
+";
+                    }
+
+                    contents += @"}
+
+// Content → RDB 用
+{
+";
+                    foreach (var item in file.ColumnsList)
+                    {
+                        contents += $@"    {item.SnakeCasePhysicsName} = yyy.{item.CamelCasePhysicsName},
+";
+                    }
+
+                    contents += @"}
+";
+                }
 
                 File.WriteAllText(Path.Combine(folder, $"{file.ClassName}.cs"), contents);
             }
