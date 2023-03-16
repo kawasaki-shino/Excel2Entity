@@ -161,7 +161,7 @@
         <Label Grid.Row="9"
                Grid.Column="0"
                VerticalAlignment="Center"
-               HorizontalAlignment="Right">namespace</Label>
+               HorizontalAlignment="Right">namespace (サブサービス名のみでOK)</Label>
         <TextBox x:Name="TbxNamespace"
                  Grid.Row="9"
                  Grid.Column="1"
