@@ -192,7 +192,7 @@ namespace Wiseman.PJC.Service.{namespc}.RDB.Entities
                     contents += @"}";
                 }
 
-                File.WriteAllText(Path.Combine(folder, $"{file.ClassName}.cs"), contents);
+                File.WriteAllText(Path.Combine(folder, $"{ file.ClassName}.cs"), contents);
             }
         }
 
