@@ -179,10 +179,20 @@ namespace {namespc}
                     }
 
                     contents += @"}
+
+// RDB → RDB 用 (ジャーナル用)
+{
 ";
+                    foreach (var item in file.ColumnsList)
+                    {
+                        contents += $@"    {item.SnakeCasePhysicsName} = zzz.{item.SnakeCasePhysicsName},
+";
+                    }
+
+                    contents += @"}";
                 }
 
-                File.WriteAllText(Path.Combine(folder, $"{file.ClassName}.cs"), contents);
+                File.WriteAllText(Path.Combine(folder, $"{ file.ClassName}.cs"), contents);
             }
         }
 
