@@ -103,7 +103,7 @@ namespace Excel2Entity
 
                 var contents = $@"using System;{(isInheritNotificationObject ? "\r\nusing Wiseman.PJC.WPF.ObjectModel;" : isStandardColumns ? "\r\nusing Wiseman.PJC.Gen2.RDB.Core;" : "")}
 
-namespace {namespc}
+namespace Wiseman.PJC.Service.{namespc}.RDB.Entities
 {{
 	public class {file.ClassName}{(isInheritNotificationObject ? " : NotificationObject" : isStandardColumns ? " : StandardColumns" : "")}
 	{{";
