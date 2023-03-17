@@ -103,7 +103,7 @@ namespace Excel2Entity
 
                 var contents = $@"using System;{(isInheritNotificationObject ? "\r\nusing Wiseman.PJC.WPF.ObjectModel;" : isStandardColumns ? "\r\nusing Wiseman.PJC.Gen2.RDB.Core;" : "")}
 
-namespace {namespc}
+namespace Wiseman.PJC.Service.{namespc}.RDB.Entities
 {{
 	public class {file.ClassName}{(isInheritNotificationObject ? " : NotificationObject" : isStandardColumns ? " : StandardColumns" : "")}
 	{{";
@@ -179,7 +179,17 @@ namespace {namespc}
                     }
 
                     contents += @"}
+
+// RDB → RDB 用 (ジャーナル用)
+{
 ";
+                    foreach (var item in file.ColumnsList)
+                    {
+                        contents += $@"    {item.SnakeCasePhysicsName} = zzz.{item.SnakeCasePhysicsName},
+";
+                    }
+
+                    contents += @"}";
                 }
 
                 File.WriteAllText(Path.Combine(folder, $"{file.ClassName}.cs"), contents);
